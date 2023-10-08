@@ -77,7 +77,7 @@ sentiment vocabulary. <br>
 To perform these calculations, we will need to extract words from the text. Since the texts have
 already been tokenized and the words are separated by white spaces, we can simply split the
 text into words based on these spaces by using the "tokenize" method.
-
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_3.png" alt="Image" width="500" height="70" />
 
 The data suggests that positive reviews are, on average, lengthier than negative reviews.
 Positive reviews also tend to have longer sentences and a more extensive and diverse
@@ -89,7 +89,9 @@ vocabulary.
 We also discovered that there are 3615 unique words in the positive dictionary and 23345 unique
 words in the negative one. We then lemmatize the tokens and recalculate the statistics and
 receive the results:
-![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_5.png | width=100)
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_5.png" alt="Image" width="300" height="70" />
+
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_6.png" alt="Image" width="300" height="70" />
 
 The difference between positive and negative reviews becomes less significant, but positive
 reviews still appear to be lengthier and more diverse than negative ones.
@@ -102,7 +104,8 @@ investigate whether there are any variations in the number of distinct adjective
 used in reviews with varying polarity. It turns out that, similar to the previous findings, positive
 reviews contain a signigificantly lower number of distinct adjectives and higher adverbs
 compared to negative reviews.
-![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_6.png)
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_7.png" alt="Image" width="300" height="70" />
+
 # Baseline Models
 Using sentiment lexicons by William Hamilton and his colleagues from Stanford
 Initially, we will implement a basic method using sentiment lexicons. William Hamilton and his
