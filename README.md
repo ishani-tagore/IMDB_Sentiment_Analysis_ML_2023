@@ -83,7 +83,7 @@ The data suggests that positive reviews are, on average, lengthier than negative
 Positive reviews also tend to have longer sentences and a more extensive and diverse
 vocabulary.
 
-<img src="(https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_4.png)" alt="Image" width="300">
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_4.png" alt="Image" width="300" height="70" />
 
 
 We also discovered that there are 3615 unique words in the positive dictionary and 23345 unique
