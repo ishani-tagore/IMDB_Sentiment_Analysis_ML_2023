@@ -158,7 +158,7 @@ We will now compare the approach of using sklearn's CountVectorizer, as describe
 with three different machine learning classifiers: Multinomial Naive Bayes, Logistic Regression,
 and Linear Support Vector Classifier.
 
-<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_10.png" alt="Image" width="300" height="210" />
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_10.png" alt="Image" width="600" height="420" />
 
 We use feature extraction to convert the text data into a numerical format to represent each
 review as a vector of weighted word frequencies. Then, we use Naive Bayes model on the
@@ -167,7 +167,7 @@ and test it by providing it with unlabeled reviews and comparing its predictions
 labels. As a result, the accuracy for each model is: Multinomial Naive Bayes (86.3%), Logistic
 Regression (86.3%), and Linear Support Vector Classifier (88.0%).
 
-<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_11.png" alt="Image" width="300" height="210" />
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_11.png" alt="Image" width="400" height="600" />
 
 # Testing Keras
 Since Keras effectively learns patterns and relationships within large datasets of text and allows
