@@ -101,7 +101,7 @@ context and detail about how these elements are being described. Therefore, we a
 investigate whether there are any variations in the number of distinct adjectives and adverbs
 used in reviews with varying polarity. It turns out that, similar to the previous findings, positive
 reviews contain a signigificantly lower number of distinct adjectives and higher adverbs
-compared to negative reviews.
+compared to negative reviews. 
 
 <img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_6.png" alt="Image" width="300" height="70" />
 
@@ -115,7 +115,7 @@ and domains, including movie-related words. Additionally, the changes in sentime
 time were also recorded, highlighting how some words have evolved to have a more positive
 connotation in recent years, such as 'wicked'. With this in mind, we create a straightforward
 "classifier" that assesses the sentiment of a review by considering the combined weight of
-various sentimental words present in the text.
+various sentimental words present in the text. <br>
 We utilize a basic approach based on a threshold system, where the cumulative score
 determines whether a review is positive or negative. We employ two methods to achieve this: <br>
 
@@ -132,7 +132,7 @@ without knowing whether the movie review is positive or negative in advance, the
 considered not good enough to serve this purpose.
 # Sentiment Analysis using SentiWordNet
 One of the limitations of the previous method is that words can have multiple meanings, each
-with varying degrees of polarity or strength of sentiment.
+with varying degrees of polarity or strength of sentiment. <br> 
 To address this issue, the NLTK library offers access to WordNet, a lexical database that helps
 distinguish between different senses of a word. Additionally, researchers from the Text
 Learning Group at the University of Pisa have developed SentiWordNet, which is also available
@@ -140,6 +140,7 @@ through NLTK. To begin, we determine the number of distinct senses associated wi
 word. By accessing the online version of WordNet, we also view examples of usage and
 definitions for each sense. By comparing the two methods, we can see that SentiWordNet
 outperform the sentiment lexicons approach.
+
 <img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_8.png" alt="Image" width="300" height="200" />
 
 # Machine Learning Methodologies
@@ -156,6 +157,7 @@ the accuracy is 87%, higher than the previous two approaches.
 We will now compare the approach of using sklearn's CountVectorizer, as described earlier,
 with three different machine learning classifiers: Multinomial Naive Bayes, Logistic Regression,
 and Linear Support Vector Classifier.
+
 <img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_10.png" alt="Image" width="300" height="210" />
 
 We use feature extraction to convert the text data into a numerical format to represent each
@@ -164,6 +166,7 @@ training set by providing it with the labeled reviews and their corresponding fe
 and test it by providing it with unlabeled reviews and comparing its predictions to the actual
 labels. As a result, the accuracy for each model is: Multinomial Naive Bayes (86.3%), Logistic
 Regression (86.3%), and Linear Support Vector Classifier (88.0%).
+
 <img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_11.png" alt="Image" width="300" height="210" />
 
 # Testing Keras
@@ -171,7 +174,7 @@ Since Keras effectively learns patterns and relationships within large datasets 
 for more accurate sentiment analysis, which is particularly important when dealing with
 subjective content, we believe it is useful for analyzing movie reviews. Additionally, Keras is a
 high-level neural network API that is easy to use and has a large community of users, making it
-a practical and accessible tool for data analysis.
+a practical and accessible tool for data analysis. <br>
 Our first step is to preprocess the data by tokenizing the text and converting it into numerical
 vectors. Next, pad the sequcne to a fixed length and covert the target data to binary labels. We
 define, complie, and train the model and discovered that it reaches the accuracy of 88.03%.
@@ -186,14 +189,15 @@ is worth a try for future analysis. LSTM is an advancement of the traditional Re
 Network (RNN) structure that stores a hidden state to capture dependencies in a data sequence
 (like token contexts in movie reviews). It was created to tackle the vanishing gradient issue in
 RNNs, where weights for tokens that are distant from the current token in the sequence are
-zeroed out, resulting in their exclusion.
+zeroed out, resulting in their exclusion. <br>
 To preserve dependencies over a long sequence of data, the LSTM uses an additional cell state
 to store relevant contexts that may still be useful for future steps, even if they aren't recent. At
 each step, this memory is updated using a sigmoid activation to forget and add new contexts
 based on the current inputs and hidden state. Then, another sigmoid activation is used to
 selectively update the hidden state for the next step. The cell shown below depicts a single step
-in the LSTM sequence.
-Here is our basic idea into utilizing LSTM:
+in the LSTM sequence.  <br>
+
+Here is our basic idea into utilizing LSTM: <br>
 1. Data preparation: the movie review dataset needs to be preprocessed to remove any
 irrelevant information and convert into numerical data;
 2. Tokenization: The text data needs to be tokenized into individual words or phrases that
@@ -208,47 +212,14 @@ labeled examples. During training, the model learns to predict the sentiment of 
 review based on its word embeddings.
 5. Model evaluation: evaluate it on test data
 # Conclusion
-In our analysis of movie reviews, we compared several different models to determine their
-accuracy in sentiment analysis. Our baseline models included sentiment lexicons developed by
-William Hamilton and his colleagues from Stanford, as well as Sentiment Analysis using
-SentiWordNet. These models had accuracies of 64.8% and 68.8%, respectively. We also tested
-several machine learning models, including Sklearn's CountVectorizer, Multinomial Naive Bayes,
-Logistic Regression, and Linear Support Vector Classifier, which had accuracies ranging from
-86.3% to 88.0%. Finally, we utilized Keras to develop a neural network model, which achieved
-an accuracy of 88.03%. Based on our results, it can be concluded that Keras is the best model
-for analyzing movie reviews due to its high accuracy and efficiency.
-The reason for use to use machine learning to analyze movie reviews is because it can handle
-large volumes of data efficiently, provide a comprehensive overview of the reviews, and reveal
-patterns that may not be easily discernible through manual analysis.
-For the movie industry, film reviews, firstly, can provide opportunities for publicity and
-marketing, attracting more attention and purchases from audiences. Especially before a movie
-is released, film reviews can create anticipation and excitement, attracting more viewers to go
-to the cinema. Second, film reviews influence whether or not audiences go to see a movie and
-how they evaluate it. For audiences, film reviews can provide reference for decision-making and
-selection, especially for those who are uncertain about whether or not to watch a particular
-movie, film reviews may play an important role in their decision-making process. Moreover,
-they directly affect the box office performance of a movie. When film reviews are very positive,
-the movie may attract more viewers and increase box office revenue; conversely, negative
-reviews may have a negative impact on the movie's box office revenue. Film reviews also
-influence the performance of a movie in award nominations. Critics' evaluations and comments
-can provide more exposure and praise for a movie, which can help it achieve better
-performance and results in award nominations. At the same time, good film reviews can also
-bring more potential opportunities for directors and actors related to the movie, achieving
-long-term benefits.
-For movie-goers, the positive and negative aspects of film reviews are crucial to movie
-enthusiasts as they provide a more comprehensive and objective evaluation of films, helping
-audiences better understand them and make informed choices. Firstly, the positive and
-negative aspects of film reviews allow audiences to have a better understanding of a film's
-strengths and weaknesses. A good film review not only praises a film's highlights but also points
-out its flaws and issues. Such comments can assist audiences in gaining a more comprehensive
-understanding of a film's strengths and weaknesses, enabling them to make an informed
-decision about whether or not to watch the film. Second, movie reviews can help the audience
-better comprehend a film's style and themes. Some films may have unique or complicated
-styles and themes, and audiences may require more guidance and explanation to understand
-them. Finally, they promote deeper discussions and explorations of films among audiences.
-Some films may involve complex topics and ideas, and audiences may require more discussion
-and exploration to understand them.
-For future analysis, LSTM is a suggested because it is a powerful technique for processing and
-analyzing sequential data, and it has been shown to be very effective in natural language
-processing tasks such as sentiment analysis. By using LSTM, you may be able to capture longer-
-term dependencies and relationships in the movie reviews that may not be captured by other models. This can lead to even more accurate analysis and insights.
+In our movie review analysis, we evaluated various models for sentiment analysis. We started with baseline models like sentiment lexicons developed by William Hamilton's team and SentiWordNet, which achieved accuracies of 64.8% and 68.8%, respectively. Moving on to machine learning models, we tested Sklearn's CountVectorizer, Multinomial Naive Bayes, Logistic Regression, and Linear Support Vector Classifier, with accuracies ranging from 86.3% to 88.0%. Our highest accuracy of 88.03% was achieved with a neural network model developed using Keras. This indicates that Keras is the most effective model for movie review analysis due to its high accuracy and efficiency. <br>
+
+Machine learning is preferred for analyzing movie reviews because it can handle large datasets efficiently, offering a comprehensive overview and uncovering subtle patterns not easily discernible through manual analysis. Movie reviews serve crucial roles in the film industry. They generate publicity and excitement, attracting more viewers and driving box office success, especially before a film's release. Positive reviews boost a movie's performance, while negative ones can hinder box office revenue and award nominations. <br>
+
+Critics' evaluations impact award nominations and provide exposure and praise for movies, benefiting directors and actors in the long term. For audiences, reviews offer a balanced assessment of a film's strengths and weaknesses, aiding informed decision-making. They help viewers understand a film's style, themes, and foster deeper discussions about complex topics. <br>
+
+For future analysis, we recommend the use of Long Short-Term Memory (LSTM) models, as they excel in processing sequential data and have proven effective in natural language processing tasks like sentiment analysis. LSTM can capture longer-term dependencies and relationships within movie reviews, potentially leading to even more accurate insights and analysis. 
+
+
+
+
