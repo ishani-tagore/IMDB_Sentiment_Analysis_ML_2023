@@ -53,6 +53,7 @@ received a rating of 5 or 6 stars are considered neutral and are not included in
 
 ![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_1.png)
 
+![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_2.png)
 
 # Data loading and preliminary inspection
 The data for training and testing comes from the polarity dataset 2.0, which is collected by Bo
@@ -76,17 +77,18 @@ sentiment vocabulary. <br>
 To perform these calculations, we will need to extract words from the text. Since the texts have
 already been tokenized and the words are separated by white spaces, we can simply split the
 text into words based on these spaces by using the "tokenize" method.
-![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_2.png)
+
 
 The data suggests that positive reviews are, on average, lengthier than negative reviews.
 Positive reviews also tend to have longer sentences and a more extensive and diverse
 vocabulary.
-![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_3.png)
+
+<img src="(https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_4.png)" alt="Image" width="300">
+
 
 We also discovered that there are 3615 unique words in the positive dictionary and 23345 unique
 words in the negative one. We then lemmatize the tokens and recalculate the statistics and
 receive the results:
-![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_4.png)
 ![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_5.png)
 
 The difference between positive and negative reviews becomes less significant, but positive
