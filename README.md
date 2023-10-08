@@ -89,9 +89,7 @@ vocabulary.
 We also discovered that there are 3615 unique words in the positive dictionary and 23345 unique
 words in the negative one. We then lemmatize the tokens and recalculate the statistics and
 receive the results:
-<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_5.png" alt="Image" width="300" height="70" />
-
-<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_6.png" alt="Image" width="300" height="70" />
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_5.png" alt="Image" width="300" height="140" />
 
 The difference between positive and negative reviews becomes less significant, but positive
 reviews still appear to be lengthier and more diverse than negative ones.
@@ -104,7 +102,9 @@ investigate whether there are any variations in the number of distinct adjective
 used in reviews with varying polarity. It turns out that, similar to the previous findings, positive
 reviews contain a signigificantly lower number of distinct adjectives and higher adverbs
 compared to negative reviews.
-<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_7.png" alt="Image" width="300" height="70" />
+
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_6.png" alt="Image" width="300" height="70" />
+
 
 # Baseline Models
 Using sentiment lexicons by William Hamilton and his colleagues from Stanford
@@ -122,14 +122,15 @@ determines whether a review is positive or negative. We employ two methods to ac
 1. Each positive word carries a weight of +1, while each negative word has a weight of -1;
 2. Positive and negative words are assigned different weights based on their sentiment
 scores in the lexicon;
-![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_7.png)
+
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_7.png" alt="Image" width="300" height="70" />
 
 As a result, we can conclude that the the first four lists are effective enough for positive movie
 reviews but of very low accuracy for negative ones, whreas the last list is effective for negative
 movie reviews but not the positive one. However, the purpose is to clearly discern the polarity
 without knowing whether the movie review is positive or negative in advance, the method is
 considered not good enough to serve this purpose.
-Sentiment Analysis using SentiWordNet
+# Sentiment Analysis using SentiWordNet
 One of the limitations of the previous method is that words can have multiple meanings, each
 with varying degrees of polarity or strength of sentiment.
 To address this issue, the NLTK library offers access to WordNet, a lexical database that helps
@@ -139,24 +140,32 @@ through NLTK. To begin, we determine the number of distinct senses associated wi
 word. By accessing the online version of WordNet, we also view examples of usage and
 definitions for each sense. By comparing the two methods, we can see that SentiWordNet
 outperform the sentiment lexicons approach.
-Machine Learning Methodologies
-# Sklearn's CountVectorizer
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_8.png" alt="Image" width="300" height="200" />
+
+# Machine Learning Methodologies
+## Sklearn's CountVectorizer
 Initially, we remove punctuation marks and stop words from the data (other filters can be
 added as desired) and prepare it for the machine learning pipeline. Next, we randomly shuffle
 the data and allocate 80% for training and the remainder for testing. After that, we utilize
 sklearn's CountVectorizer to assess the distribution of words across the texts. Finally, we
 randomly select 1000 reviews to observe how the process works. As a result, we discover that
 the accuracy is 87%, higher than the previous two approaches.
-Naive Bayes, Logistic Regression, and Linear Support Vector Classifier
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_9.png" alt="Image" width="300" height="140" />
+
+## Naive Bayes, Logistic Regression, and Linear Support Vector Classifier
 We will now compare the approach of using sklearn's CountVectorizer, as described earlier,
 with three different machine learning classifiers: Multinomial Naive Bayes, Logistic Regression,
 and Linear Support Vector Classifier.
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_10.png" alt="Image" width="300" height="210" />
+
 We use feature extraction to convert the text data into a numerical format to represent each
 review as a vector of weighted word frequencies. Then, we use Naive Bayes model on the
 training set by providing it with the labeled reviews and their corresponding feature vectors
 and test it by providing it with unlabeled reviews and comparing its predictions to the actual
 labels. As a result, the accuracy for each model is: Multinomial Naive Bayes (86.3%), Logistic
 Regression (86.3%), and Linear Support Vector Classifier (88.0%).
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_11.png" alt="Image" width="300" height="210" />
+
 # Testing Keras
 Since Keras effectively learns patterns and relationships within large datasets of text and allows
 for more accurate sentiment analysis, which is particularly important when dealing with
@@ -166,6 +175,9 @@ a practical and accessible tool for data analysis.
 Our first step is to preprocess the data by tokenizing the text and converting it into numerical
 vectors. Next, pad the sequcne to a fixed length and covert the target data to binary labels. We
 define, complie, and train the model and discovered that it reaches the accuracy of 88.03%.
+
+<img src="https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_12.png" alt="Image" width="300" height="420" />
+
 # Future Direction
 One of the limitations of our model is that we do not take “sequence” into account. For that,
 we are talking about the relationship between sentences. Since LSTM (Long Short-Term
