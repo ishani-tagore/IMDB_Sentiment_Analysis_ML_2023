@@ -5,6 +5,7 @@ comprehensive and objective evaluation of films, helping audiences better unders
 and make informed choices. Film reviews also have significant impact on the commercial value
 of movies, mainly in terms of influencing film marketing, audience decisions, box office
 performance, and award nominations.
+<br>
 This paper begins by using a pre-existing sentiment "lexicon" to build a baseline model, which
 will use positive and negative words and their sentiment strength as features. This approach
 will establish a benchmark that subsequent machine learning (ML) models should exceed. Then
@@ -49,13 +50,11 @@ and test files are further divided into 12,500 positive reviews and 12,500 negat
 Negative reviews are those reviews in which the reviewer has given a rating of 1 through 4 stars
 to the movie, while positive reviews are those rated between 7 and 10 stars. Reviews that
 received a rating of 5 or 6 stars are considered neutral and are not included in the analysis.
-# Variable Type Description
-Text Character The content posted by users
-Label Integer To indicate the emotional polarity (1 = positive, 0 = negative)
-Table 1: variale key
-Graph1 : Positive user review sample
-Graph2 : Negative user review sample
-Data loading and preliminary inspection
+
+![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_1.png)
+
+
+# Data loading and preliminary inspection
 The data for training and testing comes from the polarity dataset 2.0, which is collected by Bo
 Pang and colleagues from Cornell Univeristy. Upon downloading the dataset, we create two
 subfolders (pos/ and neg/) to contain all the positive and negative reviews respectively.
