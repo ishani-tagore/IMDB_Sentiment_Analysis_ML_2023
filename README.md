@@ -62,26 +62,33 @@ Furthermore, we display the total number of reviews present in both the positive
 dictionaries, along with the contents of the first positive and first negative review in each
 dictionary.
 To utlize the date better, we first inspect basic characteristics to understand the dataset, this
-helps gain a better insights to the following questions:
-- How many words are there in average for a movie review?
+helps gain a better insights to the following questions: <br>
+- How many words are there in average for a movie review? <br>
 - Regarding the word "content", what information can be inferred from it? For instance,
 does the initial positive review consist of numerous positive words? In other words, if
 the origin of the review was unknown and it was not specified to be positive, would it
-still be clear that it is a positive review?
+still be clear that it is a positive review? <br>
 - Moving on, let's compute some basic statistics, such as the average length of reviews in
 the positive and negative categories, the average number of words per sentence, the
 size of the vocabulary (i.e., unique words) in each category, and the diversity of the
-sentiment vocabulary.
-- What is the average frequency of each word in texts of a specific sentiment.
+sentiment vocabulary. <br>
+- What is the average frequency of each word in texts of a specific sentiment. <br>
 To perform these calculations, we will need to extract words from the text. Since the texts have
 already been tokenized and the words are separated by white spaces, we can simply split the
 text into words based on these spaces by using the "tokenize" method.
+![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_2.png)
+
 The data suggests that positive reviews are, on average, lengthier than negative reviews.
 Positive reviews also tend to have longer sentences and a more extensive and diverse
 vocabulary.
+![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_3.png)
+
 We also discovered that there are 3615 unique words in the positive dictionary and 23345 unique
 words in the negative one. We then lemmatize the tokens and recalculate the statistics and
 receive the results:
+![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_4.png)
+![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_5.png)
+
 The difference between positive and negative reviews becomes less significant, but positive
 reviews still appear to be lengthier and more diverse than negative ones.
 We believe that adjectives and adverbs are crucial components of movie reviews as they
@@ -93,6 +100,7 @@ investigate whether there are any variations in the number of distinct adjective
 used in reviews with varying polarity. It turns out that, similar to the previous findings, positive
 reviews contain a signigificantly lower number of distinct adjectives and higher adverbs
 compared to negative reviews.
+![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_6.png)
 # Baseline Models
 Using sentiment lexicons by William Hamilton and his colleagues from Stanford
 Initially, we will implement a basic method using sentiment lexicons. William Hamilton and his
@@ -104,10 +112,13 @@ connotation in recent years, such as 'wicked'. With this in mind, we create a st
 "classifier" that assesses the sentiment of a review by considering the combined weight of
 various sentimental words present in the text.
 We utilize a basic approach based on a threshold system, where the cumulative score
-determines whether a review is positive or negative. We employ two methods to achieve this:
+determines whether a review is positive or negative. We employ two methods to achieve this: <br>
+
 1. Each positive word carries a weight of +1, while each negative word has a weight of -1;
 2. Positive and negative words are assigned different weights based on their sentiment
 scores in the lexicon;
+![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_7.png)
+
 As a result, we can conclude that the the first four lists are effective enough for positive movie
 reviews but of very low accuracy for negative ones, whreas the last list is effective for negative
 movie reviews but not the positive one. However, the purpose is to clearly discern the polarity
