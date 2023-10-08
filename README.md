@@ -89,7 +89,7 @@ vocabulary.
 We also discovered that there are 3615 unique words in the positive dictionary and 23345 unique
 words in the negative one. We then lemmatize the tokens and recalculate the statistics and
 receive the results:
-![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_5.png)
+![](https://github.com/ishani-tagore/IMDB_Sentiment_Analysis_ML_2023/blob/fe784d8336636a71dcdb9acf2020c7f993e8cbf8/ML_Sentiment_5.png | width=100)
 
 The difference between positive and negative reviews becomes less significant, but positive
 reviews still appear to be lengthier and more diverse than negative ones.
